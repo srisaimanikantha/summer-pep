@@ -206,7 +206,9 @@ import axios from 'axios';
 
 // Create an axios instance with default config
 export const api = axios.create({
-  baseURL: '/api',
+  baseURL: process.env.NODE_ENV === 'production' 
+    ? 'https://your-backend-url.vercel.app/api'  // Replace with your actual backend URL
+    : '/api',
   headers: {
     'Content-Type': 'application/json',
   },
