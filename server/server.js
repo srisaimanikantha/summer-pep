@@ -13,8 +13,6 @@ const authRoutes = require('./routes/auth');
 const app = express();
 
 // Middleware
-
-// --- CORS FIX START ---
 const allowedOrigins = [
   'http://localhost:3000', // or 5173 or 8000, depending on your local setup
   'https://summer-pep-qoz3.vercel.app' // your deployed frontend URL
@@ -24,8 +22,6 @@ app.use(cors({
   origin: allowedOrigins,
   credentials: true
 }));
-// --- CORS FIX END ---
-
 app.use(express.json());
 
 // Connect to MongoDB
